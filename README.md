@@ -8,3 +8,5 @@
 ## 2019
 - Azure Saturday 2019 Pordenone - An introduction to Azure Data Factory
 - DAMAG - EmPower Your BI Architecture
+- Power Platform World Tour Milan - EmPower Your BI Architecture
+- 
