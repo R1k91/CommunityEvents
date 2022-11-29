@@ -4,6 +4,7 @@
 - Data Saturday #20 Pordenone - Working in the (Azure Data) Factory the right way!
 - SQL Start 2022 - Working in the (Azure Data) Factory the right way!
 - 1nn0va Saturday - Better database design with local development environment with Azure SQL
+- Data Saturday #22 Parma - Better database design with local development environment with Azure SQL
 ## 2021
 - Data Saturday 2021 Pordenone - PBI modeling at warp speed with TE Advanced Scripting
 - SQL Start 2021 - PBIRS for Dummies
