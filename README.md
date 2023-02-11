@@ -1,6 +1,7 @@
 # Community Events
 ## 2023
-- Global Power Platform 2023 - Milan - Houston we have a P...over BI Report
+- Global Power Platform 2023 Milan - Houston we have a P...over BI Report
+- Data Saturday #31 Pordenone
 ## 2022
 - dataMinds User Group 202202 - On-Premises Data Gateway monitoring strategy, why do I care?
 - Data Saturday #20 Pordenone - Working in the (Azure Data) Factory the right way!
