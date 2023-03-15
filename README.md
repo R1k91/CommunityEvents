@@ -19,3 +19,4 @@
 - DAMAG - EmPower Your BI Architecture
 - Power Platform World Tour Milan - EmPower Your BI Architecture
 - Power BI User Group Italy - Aggregations
+- SQL Saturday #895 Parma - EmPower Your BI Architecture
