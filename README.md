@@ -1,6 +1,7 @@
 # Community Events
 ## 2024
 - Data Saturday #48 Pordenone - Power BI CICD, Where are we? Where are we going?
+- SQL Start 2024 - Fabric: I Love You, I Love You Not
 ## 2023
 - Global Power Platform 2023 Milan - Houston we have a P...over BI Report
 - Data Saturday #31 Pordenone - Table Distribution in Dedicated Pool: That is not "a simple table"
