@@ -37,11 +37,11 @@
                       "Entity": "financials"
                     }
                   },
-                  "Property": "Profits"
+                  "Property": "Profits New"
                 }
               },
-              "queryRef": "financials.Profits",
-              "nativeQueryRef": "Profits"
+              "queryRef": "financials.Profits New",
+              "nativeQueryRef": "Profits New"
             }
           ]
         }
