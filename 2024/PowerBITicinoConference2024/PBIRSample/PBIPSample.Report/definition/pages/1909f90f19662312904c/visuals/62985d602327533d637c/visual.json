@@ -2,8 +2,8 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "62985d602327533d637c",
   "position": {
-    "x": 365.50029256875365,
-    "y": 0,
+    "x": 622.3990637799883,
+    "y": 144.55236980690461,
     "z": 1000,
     "width": 280.11702750146281,
     "height": 280.11702750146281,
@@ -51,6 +51,26 @@
           ]
         }
       }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }
