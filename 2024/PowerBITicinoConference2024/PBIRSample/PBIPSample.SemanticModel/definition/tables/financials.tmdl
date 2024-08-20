@@ -6,6 +6,11 @@ table financials
 
 		annotation PBI_FormatHint = {"isGeneralNumber":true}
 
+	measure 'Profits 2' = sum (financials[Profit] ) * -1
+		lineageTag: 1c1e32b9-9ba7-4ea7-b1cf-7476e051dd0e
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Segment
 		dataType: string
 		lineageTag: 49f8e94b-d623-47da-9d0a-f138740a1dc8
