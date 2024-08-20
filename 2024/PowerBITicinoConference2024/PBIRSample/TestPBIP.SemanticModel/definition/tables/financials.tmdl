@@ -143,10 +143,10 @@ table financials
 		dataType: int64
 		formatString: 0
 		lineageTag: 8eb9d9a8-f6ed-4cc6-b050-e7d0085fcea4
-		summarizeBy: sum
+		summarizeBy: none
 		sourceColumn: Year
 
-		annotation SummarizationSetBy = Automatic
+		annotation SummarizationSetBy = User
 
 	partition financials = m
 		mode: import
