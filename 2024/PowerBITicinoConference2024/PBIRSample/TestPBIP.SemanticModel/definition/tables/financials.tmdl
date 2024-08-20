@@ -1,6 +1,16 @@
 table financials
 	lineageTag: 95df2dde-92bd-4e64-9167-fc73ef25324b
 
+	measure Profits = SUM( financials[Profit] )
+		lineageTag: a1d472e7-82a5-488a-845b-f622d19da589
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	measure 'Profits New' = sum( financials[Profit] ) * -1
+		lineageTag: a8090f64-5ff6-4b2c-bd96-bc702caa8588
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Segment
 		dataType: string
 		lineageTag: b0a3eb8a-9221-424e-b14d-126bed38d5de

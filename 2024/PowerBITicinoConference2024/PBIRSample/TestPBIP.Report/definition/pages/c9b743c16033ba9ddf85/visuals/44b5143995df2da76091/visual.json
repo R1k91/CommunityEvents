@@ -1,0 +1,52 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "44b5143995df2da76091",
+  "position": {
+    "x": 265.88648332358105,
+    "y": 120.58513750731422,
+    "z": 0,
+    "width": 280.11702750146281,
+    "height": 280.11702750146281,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "tableEx",
+    "query": {
+      "queryState": {
+        "Values": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "financials"
+                    }
+                  },
+                  "Property": "Year"
+                }
+              },
+              "queryRef": "financials.Year",
+              "nativeQueryRef": "Year"
+            },
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "financials"
+                    }
+                  },
+                  "Property": "Profits"
+                }
+              },
+              "queryRef": "financials.Profits",
+              "nativeQueryRef": "Profits"
+            }
+          ]
+        }
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}

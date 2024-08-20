@@ -1,0 +1,94 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
+  "name": "0531a923b700ed042b3a",
+  "position": {
+    "x": 246.41310708016383,
+    "y": 140.05851375073141,
+    "z": 0,
+    "width": 817.13282621416033,
+    "height": 396.20830895260383,
+    "tabOrder": 0
+  },
+  "visual": {
+    "visualType": "clusteredColumnChart",
+    "query": {
+      "queryState": {
+        "Category": {
+          "projections": [
+            {
+              "field": {
+                "Column": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "financials"
+                    }
+                  },
+                  "Property": "Product"
+                }
+              },
+              "queryRef": "financials.Product",
+              "nativeQueryRef": "Product",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
+            {
+              "field": {
+                "Measure": {
+                  "Expression": {
+                    "SourceRef": {
+                      "Entity": "financials"
+                    }
+                  },
+                  "Property": "Profits"
+                }
+              },
+              "queryRef": "financials.Profits",
+              "nativeQueryRef": "Profits"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "financials"
+                        }
+                      },
+                      "Property": " Sales"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(financials. Sales)",
+              "nativeQueryRef": "Sum of  Sales"
+            }
+          ]
+        }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": "Profits"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
+      }
+    },
+    "drillFilterOtherVisuals": true
+  }
+}
