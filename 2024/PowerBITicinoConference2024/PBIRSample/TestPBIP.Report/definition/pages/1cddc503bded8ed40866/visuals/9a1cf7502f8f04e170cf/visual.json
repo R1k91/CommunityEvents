@@ -5,7 +5,7 @@
     "x": 393.21240491515505,
     "y": 125.82796957284961,
     "z": 1,
-    "width": 280.11702750146281,
+    "width": 387.96957284961962,
     "height": 280.11702750146281,
     "tabOrder": 1
   },
@@ -47,10 +47,49 @@
               },
               "queryRef": "Sum(financials.Profit)",
               "nativeQueryRef": "Sum of Profit"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "financials"
+                        }
+                      },
+                      "Property": "Sale Price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(financials.Sale Price)",
+              "nativeQueryRef": "Sum of Sale Price"
             }
           ]
         }
       }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }
