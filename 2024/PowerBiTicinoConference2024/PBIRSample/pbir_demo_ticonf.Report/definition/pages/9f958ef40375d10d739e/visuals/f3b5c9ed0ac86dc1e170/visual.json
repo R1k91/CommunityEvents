@@ -1,19 +1,19 @@
 {
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
-  "name": "266a7edfecd30c50d3b0",
+  "name": "f3b5c9ed0ac86dc1e170",
   "position": {
-    "x": 311.62507608034082,
-    "y": 106.73158855751673,
-    "z": 6001,
-    "width": 279.6835057821059,
-    "height": 260.20693852708456,
-    "tabOrder": 6001
+    "x": 0,
+    "y": 344,
+    "width": 371,
+    "height": 334,
+    "z": 1,
+    "tabOrder": 1
   },
   "visual": {
-    "visualType": "tableEx",
+    "visualType": "pieChart",
     "query": {
       "queryState": {
-        "Values": {
+        "Category": {
           "projections": [
             {
               "field": {
@@ -23,12 +23,17 @@
                       "Entity": "financials"
                     }
                   },
-                  "Property": "Segment"
+                  "Property": "Country"
                 }
               },
-              "queryRef": "financials.Segment",
-              "nativeQueryRef": "Segment"
-            },
+              "queryRef": "financials.Country",
+              "nativeQueryRef": "Country",
+              "active": true
+            }
+          ]
+        },
+        "Y": {
+          "projections": [
             {
               "field": {
                 "Measure": {
@@ -45,6 +50,24 @@
             }
           ]
         }
+      },
+      "sortDefinition": {
+        "sort": [
+          {
+            "field": {
+              "Measure": {
+                "Expression": {
+                  "SourceRef": {
+                    "Entity": "financials"
+                  }
+                },
+                "Property": "sales"
+              }
+            },
+            "direction": "Descending"
+          }
+        ],
+        "isDefaultSort": true
       }
     },
     "drillFilterOtherVisuals": true
