@@ -3,10 +3,10 @@
   "name": "9dfd6a825438d66402c9",
   "position": {
     "x": 0,
-    "y": 290.98814229249012,
+    "y": 291.36944613511866,
     "z": 6000,
-    "width": 279.604743083004,
-    "height": 259.68379446640319,
+    "width": 414.46135118685328,
+    "height": 259.42787583688374,
     "tabOrder": 6000
   },
   "visual": {
@@ -47,6 +47,25 @@
               },
               "queryRef": "Sum(financials.Profit)",
               "nativeQueryRef": "Sum of Profit"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "financials"
+                        }
+                      },
+                      "Property": "Sale Price"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(financials.Sale Price)",
+              "nativeQueryRef": "Sum of Sale Price"
             }
           ]
         }
@@ -74,6 +93,26 @@
         ],
         "isDefaultSort": true
       }
+    },
+    "objects": {
+      "grid": [
+        {
+          "properties": {
+            "outlineColor": {
+              "solid": {
+                "color": {
+                  "expr": {
+                    "ThemeDataColor": {
+                      "ColorId": 9,
+                      "Percent": 0
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      ]
     },
     "drillFilterOtherVisuals": true
   }
