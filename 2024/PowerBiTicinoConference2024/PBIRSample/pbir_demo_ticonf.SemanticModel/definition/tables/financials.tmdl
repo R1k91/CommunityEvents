@@ -1,6 +1,11 @@
 table financials
 	lineageTag: 16b53c6b-8dee-44d4-b992-458e490b4ed4
 
+	measure sales = sum ( financials[Gross Sales] )
+		lineageTag: df452da8-67e5-46f4-abaa-b864e9a8e21d
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
 	column Segment
 		dataType: string
 		lineageTag: 2c84ca86-9396-489d-b1ba-c1897e1b6541
