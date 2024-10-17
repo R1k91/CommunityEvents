@@ -2,10 +2,10 @@
   "$schema": "https://developer.microsoft.com/json-schemas/fabric/item/report/definition/visualContainer/1.0.0/schema.json",
   "name": "10922c0422c085d00620",
   "position": {
-    "x": 63.883140596469865,
+    "x": 22.592818015824708,
     "y": 116.85940353012781,
     "z": 1000,
-    "width": 299.93913572732805,
+    "width": 422.25197808886179,
     "height": 196.32379793061472,
     "tabOrder": 1000
   },
@@ -47,6 +47,25 @@
               },
               "queryRef": "Sum(financials.Gross Sales)",
               "nativeQueryRef": "Sum of Gross Sales"
+            },
+            {
+              "field": {
+                "Aggregation": {
+                  "Expression": {
+                    "Column": {
+                      "Expression": {
+                        "SourceRef": {
+                          "Entity": "financials"
+                        }
+                      },
+                      "Property": "Profit"
+                    }
+                  },
+                  "Function": 0
+                }
+              },
+              "queryRef": "Sum(financials.Profit)",
+              "nativeQueryRef": "Sum of Profit"
             }
           ]
         }
