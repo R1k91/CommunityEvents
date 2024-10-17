@@ -1,0 +1,9 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../pbir_ti2024.SemanticModel"
+    },
+    "byConnection": null
+  }
+}
