@@ -55,19 +55,21 @@
         "isDefaultSort": true
       }
     },
-    "objects": {
-      "grid": [
+    "visualContainerObjects": {
+      "title": [
         {
           "properties": {
-            "outlineColor": {
-              "solid": {
-                "color": {
-                  "expr": {
-                    "ThemeDataColor": {
-                      "ColorId": 9,
-                      "Percent": 0
-                    }
-                  }
+            "show": {
+              "expr": {
+                "Literal": {
+                  "Value": "true"
+                }
+              }
+            },
+            "text": {
+              "expr": {
+                "Literal": {
+                  "Value": "'this is a title'"
                 }
               }
             }
