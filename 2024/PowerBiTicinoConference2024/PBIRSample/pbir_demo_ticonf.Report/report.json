@@ -1,0 +1,117 @@
+{
+  "config": "{\"version\":\"5.55\",\"themeCollection\":{\"baseTheme\":{\"name\":\"CY24SU06\",\"version\":\"5.56\",\"type\":2}},\"activeSectionIndex\":0,\"defaultDrillFilterOtherVisuals\":true,\"linguisticSchemaSyncVersion\":0,\"settings\":{\"useNewFilterPaneExperience\":true,\"allowChangeFilterTypes\":true,\"useStylableVisualContainerHeader\":true,\"queryLimitOption\":6,\"useEnhancedTooltips\":true,\"exportDataMode\":1,\"useDefaultAggregateDisplayName\":true},\"objects\":{\"section\":[{\"properties\":{\"verticalAlignment\":{\"expr\":{\"Literal\":{\"Value\":\"'Top'\"}}}}}]}}",
+  "layoutOptimization": 0,
+  "resourcePackages": [
+    {
+      "resourcePackage": {
+        "disabled": false,
+        "items": [
+          {
+            "name": "CY24SU06",
+            "path": "BaseThemes/CY24SU06.json",
+            "type": 202
+          }
+        ],
+        "name": "SharedResources",
+        "type": 2
+      }
+    }
+  ],
+  "sections": [
+    {
+      "config": "{}",
+      "displayName": "Page 2",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "9f958ef40375d10d739e",
+      "ordinal": 1,
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"bf2c617d04c394c0a3a9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":0,\"z\":0,\"width\":370.6719367588933,\"height\":333.67588932806325,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"barChart\",\"projections\":{\"Category\":[{\"queryRef\":\"financials.Country\",\"active\":true}],\"Y\":[{\"queryRef\":\"Sum(financials.Profit)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Country\"},\"Name\":\"financials.Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Profit\"}},\"Function\":0},\"Name\":\"Sum(financials.Profit)\",\"NativeReferenceName\":\"Sum of Profit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Profit\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 333.68,
+          "width": 370.67,
+          "x": 0.00,
+          "y": 0.00,
+          "z": 0.00
+        }
+      ],
+      "width": 1280.00
+    },
+    {
+      "config": "{}",
+      "displayName": "Page 1",
+      "displayOption": 1,
+      "filters": "[]",
+      "height": 720.00,
+      "name": "ac83a6a00d89a5db6006",
+      "visualContainers": [
+        {
+          "config": "{\"name\":\"2516a36aea8c4d03bc2e\",\"layouts\":[{\"id\":0,\"position\":{\"x\":650.9881422924901,\"y\":538.5770750988142,\"z\":4000,\"width\":266.79841897233206,\"height\":181.42292490118578,\"tabOrder\":4000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Demo 4 - min\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"Cancellare tutti I branch locali\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Switchare su main\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Aggiungere 2 misure Profits e Profit New (la seconda fa *-1)\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Commit and push\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"VSCode find and replace Profits with Profits New\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 181.42,
+          "width": 266.80,
+          "x": 650.99,
+          "y": 538.58,
+          "z": 4000.00
+        },
+        {
+          "config": "{\"name\":\"2e2d33043d9ce083c2e9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":650.9881422924901,\"y\":253.9920948616601,\"z\":1000,\"width\":266.79841897233206,\"height\":307.3517786561265,\"tabOrder\":1000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Demo 2 - 8 min\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"Aggiungere un campo in tabella pagina 1\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Mostrare diff\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Cambiare border color tabella pagina 1\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Mostrare diff facendo Vedere che compare un intero nodo per la formattazione\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Committare\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Chiudre power bi desktop\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Aprire VSCode e rimuovere la parte relativa ai colori\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Riaprire pbip e far Vedere ceh è tornato al default\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Aggiungere un title e far Vedere che il nodo risultante è una merge \"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 307.35,
+          "width": 266.80,
+          "x": 650.99,
+          "y": 253.99,
+          "z": 1000.00
+        },
+        {
+          "config": "{\"name\":\"8de7217a9329930a126b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":937.707509881423,\"y\":0,\"z\":2000,\"width\":342.2134387351779,\"height\":367.1146245059289,\"tabOrder\":2000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Demo 3 -  min\",\"textStyle\":{\"fontWeight\":\"bold\",\"fontSize\":\"13.3333px\"}}]},{\"textRuns\":[{\"value\":\"Far Vedere la history con l’ultimo commit che aggiunge title e color\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Eseguire un revert \"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Pushare\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Creare branch main-ft001-addpage\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Creare branch main-ft002-addtable\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Mostrare il branch attivo ed aggiungere una tabella in una pagina diversa\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Committare e pusha il branch\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Switchare su altro branch mostrando che la modifica appena fatta non c’è\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Aggiungi una pagina con una torta unit sold per product\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Setta la pagina di apertura sulla prima per generare un conflitto\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Committa e pusha il branch\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Pull request su main branch 1 che sarà ok\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Pull request su main branch 2 che darà conflitto su pagina di apertura\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Risolvi a mano il conflitto\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Scarica main mostra risultato mergiato\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 367.11,
+          "width": 342.21,
+          "x": 937.71,
+          "y": 0.00,
+          "z": 2000.00
+        },
+        {
+          "config": "{\"name\":\"9dfd6a825438d66402c9\",\"layouts\":[{\"id\":0,\"position\":{\"x\":0,\"y\":290.9881422924901,\"z\":4002,\"width\":279.604743083004,\"height\":259.6837944664032,\"tabOrder\":4002}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"financials.Country\"},{\"queryRef\":\"Sum(financials.Profit)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Country\"},\"Name\":\"financials.Country\",\"NativeReferenceName\":\"Country\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Profit\"}},\"Function\":0},\"Name\":\"Sum(financials.Profit)\",\"NativeReferenceName\":\"Sum of Profit\"}],\"OrderBy\":[{\"Direction\":2,\"Expression\":{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Profit\"}},\"Function\":0}}}]},\"drillFilterOtherVisuals\":true,\"hasDefaultSort\":true}}",
+          "filters": "[]",
+          "height": 259.68,
+          "width": 279.60,
+          "x": 0.00,
+          "y": 290.99,
+          "z": 4002.00
+        },
+        {
+          "config": "{\"name\":\"d73a5b0abebd5416036b\",\"layouts\":[{\"id\":0,\"position\":{\"x\":10,\"y\":0,\"width\":280,\"height\":260,\"z\":4001,\"tabOrder\":4001}}],\"singleVisual\":{\"visualType\":\"tableEx\",\"projections\":{\"Values\":[{\"queryRef\":\"financials.Product\"},{\"queryRef\":\"Sum(financials.Gross Sales)\"}]},\"prototypeQuery\":{\"Version\":2,\"From\":[{\"Name\":\"f\",\"Entity\":\"financials\",\"Type\":0}],\"Select\":[{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Product\"},\"Name\":\"financials.Product\",\"NativeReferenceName\":\"Product\"},{\"Aggregation\":{\"Expression\":{\"Column\":{\"Expression\":{\"SourceRef\":{\"Source\":\"f\"}},\"Property\":\"Gross Sales\"}},\"Function\":0},\"Name\":\"Sum(financials.Gross Sales)\",\"NativeReferenceName\":\"Sum of Gross Sales\"}]},\"drillFilterOtherVisuals\":true}}",
+          "filters": "[]",
+          "height": 260.00,
+          "width": 280.00,
+          "x": 10.00,
+          "y": 0.00,
+          "z": 4001.00
+        },
+        {
+          "config": "{\"name\":\"d99c7f820010a6c0b049\",\"layouts\":[{\"id\":0,\"position\":{\"x\":637.4703557312254,\"y\":0,\"z\":0,\"width\":280.3162055335969,\"height\":260.39525691699606,\"tabOrder\":0}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Demo 1 - 18 min\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"Creazione pbip in cartella sotto github/devops\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Creare 2 pagine\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Pagina 1 con 2 tabelle\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Pagina 2 con 1 bar chart\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Committare\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Creare una misura \"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"verificare modifica solo in semanticmodel\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"verificare vecchia definizione JSON\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"committare\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"verificare conversion PBIR\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"verificare struttura\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"verificare schema nel json “pages.json”\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"Committare\"}],\"listType\":\"bullet\"},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 260.40,
+          "width": 280.32,
+          "x": 637.47,
+          "y": 0.00,
+          "z": 0.00
+        },
+        {
+          "config": "{\"name\":\"fa6f68feed896a999948\",\"layouts\":[{\"id\":0,\"position\":{\"x\":937.707509881423,\"y\":538.5770750988142,\"z\":3000,\"width\":342.2134387351779,\"height\":181.42292490118578,\"tabOrder\":3000}}],\"singleVisual\":{\"visualType\":\"textbox\",\"drillFilterOtherVisuals\":true,\"objects\":{\"general\":[{\"properties\":{\"paragraphs\":[{\"textRuns\":[{\"value\":\"Demo 5 - min\",\"textStyle\":{\"fontWeight\":\"bold\"}}]},{\"textRuns\":[{\"value\":\"\"}]},{\"textRuns\":[{\"value\":\"Crea un nuovo pbir\"}]},{\"textRuns\":[{\"value\":\"Live connection su workspace packt – modello test\"}]},{\"textRuns\":[{\"value\":\"Apri vs code e cambia string\"}]},{\"textRuns\":[{\"value\":\"Data Source=powerbi://api.powerbi.com/v1.0/myorg/Lucient - Demo;Initial Catalog=\\\\\\\"NYC Cycling Incident - Maps and KPI Analysis\\\\\"}]},{\"textRuns\":[{\"value\":\"\"}]}]}}]}}}",
+          "filters": "[]",
+          "height": 181.42,
+          "width": 342.21,
+          "x": 937.71,
+          "y": 538.58,
+          "z": 3000.00
+        }
+      ],
+      "width": 1280.00
+    }
+  ]
+}
