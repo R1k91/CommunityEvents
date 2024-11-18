@@ -7,9 +7,11 @@
 - Power BI User Group Italy - Transitioning from Azure Data Factory to Data Factory in Fabric
 - Power BI Ticino Conference 2024 - Demystifying Power BI enhanced report format
 - Data Saturday #64 Parma - SQL Database Projects Deep Dive
+- WPC 2024 - Power BI CICD, 1 Year Later
 ## 2023
 - Global Power Platform 2023 Milan - Houston we have a P...over BI Report
 - Data Saturday #31 Pordenone - Table Distribution in Dedicated Pool: That is not "a simple table"
+- WPC 2023 - Power BI CICD
 - Global Azure 2023 Torino - Table Distribution in Dedicated Pool: That is not "a simple table"
 - SQL Start 2023 - Houston we have a P...over BI Report
 ## 2022
