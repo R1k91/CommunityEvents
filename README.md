@@ -2,6 +2,8 @@
 ## 2025
 - Power BI User Group Italy - Deep Dive into Database Projects for Fabric Warehouse
 - Data Saturday #66 Pordenone - Power BI CICD 2025 Edition
+- Power BI & Fabric Summit 2025 - Deep Dive into Database Projects for Fabric Warehouse
+- Power BI & Fabric Summit 2025 - Transitioning from Azure Data Factory to Data Factory in Fabric
 ## 2024
 - Data Saturday #48 Pordenone - Power BI CICD, Where are we? Where are we going?
 - SQL Start 2024 - Fabric: I Love You, I Love You Not
