@@ -1,0 +1,168 @@
+relationship fact_order_dim_customer
+	fromColumn: 'Fact Order'.'Customer Key'
+	toColumn: 'Dim Customer'.'Customer Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_sale_dim_customer
+	isActive: false
+	fromColumn: 'Fact Sale'.'Customer Key'
+	toColumn: 'Dim Customer'.'Customer Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_movement_dim_customer
+	isActive: false
+	fromColumn: 'Fact Movement'.'Customer Key'
+	toColumn: 'Dim Customer'.'Customer Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_transaction_dim_customer
+	isActive: false
+	fromColumn: 'Fact Transaction'.'Customer Key'
+	toColumn: 'Dim Customer'.'Customer Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_sale_dim_city
+	fromColumn: 'Fact Sale'.'City Key'
+	toColumn: 'Dim City'.'City Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_order_dim_city
+	fromColumn: 'Fact Order'.'City Key'
+	toColumn: 'Dim City'.'City Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_order_dim_stock_item
+	fromColumn: 'Fact Order'.'Stock Item Key'
+	toColumn: 'Dim Stock Item'.'Stock Item Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_sale_dim_stock_item
+	fromColumn: 'Fact Sale'.'Stock Item Key'
+	toColumn: 'Dim Stock Item'.'Stock Item Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_purchase_dim_stock_item
+	fromColumn: 'Fact Purchase'.'Stock Item Key'
+	toColumn: 'Dim Stock Item'.'Stock Item Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_movement_dim_stock_item
+	fromColumn: 'Fact Movement'.'Stock Item Key'
+	toColumn: 'Dim Stock Item'.'Stock Item Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_stock_holding_dim_stock_item
+	fromColumn: 'Fact Stock Holding'.'Stock Item Key'
+	toColumn: 'Dim Stock Item'.'Stock Item Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_order_dim_date_order_date
+	fromColumn: 'Fact Order'.'Order Date Key'
+	toColumn: 'Dim Date'.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_order_dim_date_picked_date
+	isActive: false
+	fromColumn: 'Fact Order'.'Picked Date Key'
+	toColumn: 'Dim Date'.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_sale_dim_date_invoice_date
+	fromColumn: 'Fact Sale'.'Invoice Date Key'
+	toColumn: 'Dim Date'.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_sale_dim_date_delivery_date
+	isActive: false
+	fromColumn: 'Fact Sale'.'Delivery Date Key'
+	toColumn: 'Dim Date'.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_purchase_dim_date
+	fromColumn: 'Fact Purchase'.'Date Key'
+	toColumn: 'Dim Date'.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_movement_dim_date
+	fromColumn: 'Fact Movement'.'Date Key'
+	toColumn: 'Dim Date'.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_transaction_dim_date
+	fromColumn: 'Fact Transaction'.'Date Key'
+	toColumn: 'Dim Date'.Date
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_purchase_dim_supplier
+	fromColumn: 'Fact Purchase'.'Supplier Key'
+	toColumn: 'Dim Supplier'.'Supplier Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_movement_dim_supplier
+	fromColumn: 'Fact Movement'.'Supplier Key'
+	toColumn: 'Dim Supplier'.'Supplier Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_transaction_dim_supplier
+	fromColumn: 'Fact Transaction'.'Supplier Key'
+	toColumn: 'Dim Supplier'.'Supplier Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_transaction_dim_payment_method
+	fromColumn: 'Fact Transaction'.'Payment Method Key'
+	toColumn: 'Dim Payment Method'.'Payment Method Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_movement_dim_transaction_type
+	fromColumn: 'Fact Movement'.'Transaction Type Key'
+	toColumn: 'Dim Transaction Type'.'Transaction Type Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_transaction_dim_transaction_type
+	fromColumn: 'Fact Transaction'.'Transaction Type Key'
+	toColumn: 'Dim Transaction Type'.'Transaction Type Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_order_dim_employee_salesperson
+	fromColumn: 'Fact Order'.'Salesperson Key'
+	toColumn: 'Dim Employee'.'Employee Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_order_dim_employee_picker
+	isActive: false
+	fromColumn: 'Fact Order'.'Picker Key'
+	toColumn: 'Dim Employee'.'Employee Key'
+
+	annotation PBI_IsFromSource = FS
+
+relationship fact_sale_dim_employee
+	fromColumn: 'Fact Sale'.'Salesperson Key'
+	toColumn: 'Dim Employee'.'Employee Key'
+
+	annotation PBI_IsFromSource = FS
+

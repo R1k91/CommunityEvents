@@ -1,0 +1,112 @@
+table 'Fact Purchase'
+	lineageTag: 1fd2177b-3ef1-49bf-9288-0e8d467e6951
+
+	column 'Purchase Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: a1337fcb-e317-49db-9f60-7b0646d6394e
+		summarizeBy: count
+		sourceColumn: Purchase Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: febf34be-7cd2-4058-88ba-16672f4de3b0
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Supplier Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 8ca052a0-185e-4f70-aa69-57c59213a60e
+		summarizeBy: count
+		sourceColumn: Supplier Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stock Item Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7fe8a210-6e18-4545-9c82-449af0371025
+		summarizeBy: count
+		sourceColumn: Stock Item Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Purchase Order ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 5d50b52e-8aba-453e-91ff-7dca9405e829
+		summarizeBy: count
+		sourceColumn: WWI Purchase Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordered Outers'
+		dataType: int64
+		formatString: 0
+		lineageTag: 336605c1-a8b3-4cb0-b089-58743f581ea4
+		summarizeBy: sum
+		sourceColumn: Ordered Outers
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Ordered Quantity'
+		dataType: int64
+		formatString: 0
+		lineageTag: f22da1eb-93ec-4440-b1d2-f2e6c97f624f
+		summarizeBy: sum
+		sourceColumn: Ordered Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Received Outers'
+		dataType: int64
+		formatString: 0
+		lineageTag: ddb93815-d65c-4ddc-8d07-cf0a4295579d
+		summarizeBy: sum
+		sourceColumn: Received Outers
+
+		annotation SummarizationSetBy = Automatic
+
+	column Package
+		dataType: string
+		lineageTag: 306147d5-abd2-44dd-b406-2c4345abbd7d
+		summarizeBy: none
+		sourceColumn: Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Order Finalized'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 8e275a69-dceb-4406-83e5-7b38b39ecc3e
+		summarizeBy: none
+		sourceColumn: Is Order Finalized
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: ae4f3e83-705a-423f-b69c-8887430aee44
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Purchase' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "WideWorldImportersDW"),
+				    Fact_Purchase = Source{[Schema="Fact",Item="Purchase"]}[Data]
+				in
+				    Fact_Purchase
+

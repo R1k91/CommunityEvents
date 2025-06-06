@@ -1,0 +1,83 @@
+table 'Dimension City'
+	lineageTag: a563df2a-3840-4f9a-935d-8a7b72ff9810
+
+	column 'City Key'
+		dataType: int64
+		lineageTag: 99a7c1da-f19f-45f1-ad2c-d53973d8e6a5
+		sourceColumn: City Key
+
+	column 'WWI City ID'
+		dataType: int64
+		lineageTag: 496297e8-0cfe-4b06-bf8e-095045ebea05
+		sourceColumn: WWI City ID
+
+	column City
+		dataType: string
+		lineageTag: 03165c39-423f-4641-a5cd-80147e4e1e79
+		sourceColumn: City
+
+	column 'State Province'
+		dataType: string
+		lineageTag: f6700d1e-9ed1-4d77-81cd-b85634327777
+		sourceColumn: State Province
+
+	column Country
+		dataType: string
+		lineageTag: ee20eebd-47cc-49a0-af1b-23719310ea54
+		sourceColumn: Country
+
+	column Continent
+		dataType: string
+		lineageTag: 0fd56bd9-d364-4936-897e-26da5d974160
+		sourceColumn: Continent
+
+	column 'Sales Territory'
+		dataType: string
+		lineageTag: 118b9c7d-bfda-44d3-af2c-7030a3af1fa8
+		sourceColumn: Sales Territory
+
+	column Region
+		dataType: string
+		lineageTag: 4968b502-ed51-45d2-9c8e-490d39a7d239
+		sourceColumn: Region
+
+	column Subregion
+		dataType: string
+		lineageTag: d8fcc5ed-3768-4dfc-b680-f9aed0ca1c0a
+		sourceColumn: Subregion
+
+	column Location
+		dataType: string
+		lineageTag: 1838642c-1108-41c6-b8a9-5d989ebfdc14
+		sourceColumn: Location
+
+	column 'Latest Recorded Population'
+		dataType: int64
+		lineageTag: 66be20d5-da38-4645-8dbc-8023744eee91
+		sourceColumn: Latest Recorded Population
+
+	column 'Valid From'
+		dataType: dateTime
+		lineageTag: cd00a63f-d84d-471e-8ee9-151430d8f208
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: dateTime
+		lineageTag: 9a170b4f-e3cb-40f2-92d0-2719ae766a23
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: int64
+		lineageTag: 2029197a-5082-41ea-9234-bde86acabd61
+		sourceColumn: Lineage Key
+
+	partition Partition = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Sql.Database("localhost", "WideWorldImportersDW"),
+					Dimension_City = Source{[Schema="Dimension",Item="City"]}[Data]
+				in
+					Dimension_City
+

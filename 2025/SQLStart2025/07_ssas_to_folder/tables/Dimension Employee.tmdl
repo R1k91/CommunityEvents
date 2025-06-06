@@ -1,0 +1,52 @@
+﻿table 'Dimension Employee'
+	ordinal: 4
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Dimension_Employee = Source{[Schema="Dimension",Item="Employee"]}[Data]
+			in
+			    Dimension_Employee
+
+	column 'Employee Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Employee Key
+
+	column 'WWI Employee ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Employee ID
+
+	column Employee
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Employee
+
+	column 'Preferred Name'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Preferred Name
+
+	column 'Is Salesperson'
+		dataType: Boolean
+		isDataTypeInferred: false
+		sourceColumn: Is Salesperson
+
+	column 'Valid From'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

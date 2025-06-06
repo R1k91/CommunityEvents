@@ -1,0 +1,32 @@
+model Model
+	culture: en-US
+	defaultPowerBIDataSourceVersion: powerBI_V3
+	sourceQueryCulture: en-US
+	dataAccessOptions
+		legacyRedirects
+		returnErrorValuesAsNull
+
+annotation __PBI_TimeIntelligenceEnabled = 1
+
+annotation PBIDesktopVersion = 2.143.878.0 (25.05)+b20aa3b866ec1b70879135a4e60e4b1301c75b21
+
+annotation PBI_QueryOrder = ["Channel","Sales","Stores","Promotion","ProductSubcategory","ProductCategory","Product","Geography","Calendar"]
+
+annotation PBI_ProTooling = ["DevMode"]
+
+ref table Channel
+ref table Sales
+ref table Stores
+ref table Promotion
+ref table ProductSubcategory
+ref table ProductCategory
+ref table Product
+ref table Geography
+ref table Calendar
+ref table DateTableTemplate_6b7051ba-225c-471f-ae7e-29af48e32a6d
+ref table LocalDateTable_f22d4ac7-bee8-4659-a902-f49a7d3090f6
+ref table LocalDateTable_be16b59c-0628-486f-b58d-163339bb511e
+ref table LocalDateTable_e0f960dd-6fb3-4ef4-80d6-a5860437a22b
+
+ref cultureInfo en-US
+

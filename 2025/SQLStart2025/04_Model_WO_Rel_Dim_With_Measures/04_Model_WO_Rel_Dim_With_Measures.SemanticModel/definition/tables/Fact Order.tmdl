@@ -1,0 +1,192 @@
+table 'Fact Order'
+	lineageTag: 9461cdb5-e8fe-4925-94b0-956e51f57e84
+
+	column 'Order Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: d85cb42d-1418-44ad-992a-d7b2c50337ab
+		summarizeBy: count
+		sourceColumn: Order Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'City Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 33a85e44-3a6e-4de7-bd34-573ec4364535
+		summarizeBy: count
+		sourceColumn: City Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Customer Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: e81551d5-ec21-48c5-903a-d12a2f026305
+		summarizeBy: count
+		sourceColumn: Customer Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stock Item Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 2956d109-1b28-4070-a5fa-1575417cd08b
+		summarizeBy: count
+		sourceColumn: Stock Item Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Order Date Key'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 07731cbf-5a03-4b9c-9580-0345173cc9bc
+		summarizeBy: none
+		sourceColumn: Order Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Picked Date Key'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0732a38f-5d98-4835-9e74-ab6a2e51d7e9
+		summarizeBy: none
+		sourceColumn: Picked Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Salesperson Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 6e284609-ace1-4445-8715-98024b4ff379
+		summarizeBy: count
+		sourceColumn: Salesperson Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Picker Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: fbd814a1-1bf2-43a4-9ffa-f98776481c94
+		summarizeBy: count
+		sourceColumn: Picker Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Order ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 9ab35abc-997d-4a26-ab03-a46abaa18761
+		summarizeBy: count
+		sourceColumn: WWI Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Backorder ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: b1dda087-b161-41b1-93fe-9bc356dbd57b
+		summarizeBy: count
+		sourceColumn: WWI Backorder ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Description
+		dataType: string
+		lineageTag: 90530c13-6445-4e41-9aba-caac362c40f1
+		summarizeBy: none
+		sourceColumn: Description
+
+		annotation SummarizationSetBy = Automatic
+
+	column Package
+		dataType: string
+		lineageTag: 61271a52-b788-4fb5-99ec-314b8dd0b09a
+		summarizeBy: none
+		sourceColumn: Package
+
+		annotation SummarizationSetBy = Automatic
+
+	column Quantity
+		dataType: int64
+		formatString: 0
+		lineageTag: 88bdd13a-d569-401e-9ee6-1c1d71772b5b
+		summarizeBy: sum
+		sourceColumn: Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Unit Price'
+		dataType: double
+		lineageTag: 79554171-a924-48a8-84d1-38fcccdc7acd
+		summarizeBy: sum
+		sourceColumn: Unit Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tax Rate'
+		dataType: double
+		lineageTag: 56a3b40d-1e10-4ae0-82a2-4118f8483449
+		summarizeBy: sum
+		sourceColumn: Tax Rate
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Excluding Tax'
+		dataType: double
+		lineageTag: 84d988dd-2688-484f-baef-5a522fbe66b7
+		summarizeBy: sum
+		sourceColumn: Total Excluding Tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tax Amount'
+		dataType: double
+		lineageTag: 124d8a93-81a5-4f84-a7c7-b3352eacf710
+		summarizeBy: sum
+		sourceColumn: Tax Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Including Tax'
+		dataType: double
+		lineageTag: 1e058428-aa59-4a74-9fea-3924d3123020
+		summarizeBy: sum
+		sourceColumn: Total Including Tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 481856ca-7f43-4e1e-8f92-b833324b65f7
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Order' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "WideWorldImportersDW"),
+				    Fact_Order = Source{[Schema="Fact",Item="Order"]}[Data]
+				in
+				    Fact_Order
+
+	annotation PBI_ResultType = Table
+

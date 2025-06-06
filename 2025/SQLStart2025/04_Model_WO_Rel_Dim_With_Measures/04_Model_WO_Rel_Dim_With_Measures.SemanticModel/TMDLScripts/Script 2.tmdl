@@ -1,0 +1,12 @@
+createOrReplace
+
+	ref table 'Fact Sale'
+
+		measure 'Sum of Quantity' = SUM('Fact Sale'[Quantity])
+			formatString: 0
+			lineageTag: a7c262b9-5ade-491e-8803-9b8609a78e2c
+		
+		measure 'Sum of Profit' = SUM('Fact Sale'[Profit])
+			formatString: 0
+			lineageTag: 019712fa-3f15-7259-a9f0-d3a30fdbb31c
+

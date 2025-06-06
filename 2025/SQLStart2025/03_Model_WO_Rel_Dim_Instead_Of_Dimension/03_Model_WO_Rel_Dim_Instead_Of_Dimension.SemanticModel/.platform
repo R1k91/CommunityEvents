@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "03_Model_WO_Rel_Dim_Instead_Of_Dimension"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "313df6c3-ad60-4312-9efb-3e2b0f42374a"
+  }
+}

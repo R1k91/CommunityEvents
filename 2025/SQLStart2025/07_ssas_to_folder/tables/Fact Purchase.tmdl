@@ -1,0 +1,67 @@
+﻿table 'Fact Purchase'
+	ordinal: 11
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Fact_Purchase = Source{[Schema="Fact",Item="Purchase"]}[Data]
+			in
+			    Fact_Purchase
+
+	column 'Purchase Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Purchase Key
+
+	column 'Date Key'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Date Key
+
+	column 'Supplier Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Supplier Key
+
+	column 'Stock Item Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Stock Item Key
+
+	column 'WWI Purchase Order ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Purchase Order ID
+
+	column 'Ordered Outers'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Ordered Outers
+
+	column 'Ordered Quantity'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Ordered Quantity
+
+	column 'Received Outers'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Received Outers
+
+	column Package
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Package
+
+	column 'Is Order Finalized'
+		dataType: Boolean
+		isDataTypeInferred: false
+		sourceColumn: Is Order Finalized
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

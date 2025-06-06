@@ -1,0 +1,67 @@
+table 'Dim Transaction Type'
+	lineageTag: 10220910-9a37-4d96-a385-562d70019bae
+
+	column 'Transaction Type Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 46c95997-5320-4baf-b3c7-c0755c1ec852
+		summarizeBy: count
+		sourceColumn: Transaction Type Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Transaction Type ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: c3411200-865f-4b96-8f72-a55ca1325811
+		summarizeBy: count
+		sourceColumn: WWI Transaction Type ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type'
+		dataType: string
+		lineageTag: e18a3274-bf8a-46e7-a2d4-f10b7767fb66
+		summarizeBy: none
+		sourceColumn: Transaction Type
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 660c7aee-8832-455b-bb4f-78d2ad4ca3c7
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: b1f76676-ee61-4e1d-aa0c-20e7daf64df0
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 47cfd1a5-7e0e-46c1-90ed-d64787e145c7
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Transaction Type' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "WideWorldImportersDW"),
+				    #"Dimension_Transaction Type" = Source{[Schema="Dimension",Item="Transaction Type"]}[Data]
+				in
+				    #"Dimension_Transaction Type"
+
+	annotation PBI_ResultType = Table
+

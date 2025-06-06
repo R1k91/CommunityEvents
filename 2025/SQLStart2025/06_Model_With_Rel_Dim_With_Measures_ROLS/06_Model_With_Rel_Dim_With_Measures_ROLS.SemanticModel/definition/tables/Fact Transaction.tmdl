@@ -1,0 +1,179 @@
+table 'Fact Transaction'
+	lineageTag: b81bf57d-80c5-4756-8d8c-cf9bb0bcdd7d
+
+	column 'Transaction Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 36fe7608-bdfd-439b-9e08-fecf292fa4fe
+		summarizeBy: count
+		sourceColumn: Transaction Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Date Key'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 0d325327-4a4b-4817-8b41-00ba99fbb032
+		summarizeBy: none
+		sourceColumn: Date Key
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation UnderlyingDateTimeDataType = Date
+
+	column 'Customer Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: ce4ccd03-5f81-4a5b-8add-f60f32e4a327
+		summarizeBy: count
+		sourceColumn: Customer Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bill To Customer Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: bc967fae-c43e-497c-ae7c-87e6b87411ca
+		summarizeBy: count
+		sourceColumn: Bill To Customer Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 4bf30b4d-bbec-41b8-82bc-341cbe1e8f86
+		summarizeBy: count
+		sourceColumn: Supplier Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Transaction Type Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7f6f1482-0849-429e-b91e-66b415e73604
+		summarizeBy: count
+		sourceColumn: Transaction Type Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Method Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7bf6bb74-72c3-4c63-920a-201e2a7a2b0c
+		summarizeBy: count
+		sourceColumn: Payment Method Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Customer Transaction ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1fac16ef-3715-40c9-ba61-634dc5a599e4
+		summarizeBy: count
+		sourceColumn: WWI Customer Transaction ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Supplier Transaction ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 43451ba8-9cb7-47ea-b7ca-c447c48dc330
+		summarizeBy: count
+		sourceColumn: WWI Supplier Transaction ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Invoice ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 38bba9b1-6655-4cc1-9592-9655e4a0027d
+		summarizeBy: count
+		sourceColumn: WWI Invoice ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Purchase Order ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: 85365ff4-1cc4-4b3c-b3a4-8df192bcdd3e
+		summarizeBy: count
+		sourceColumn: WWI Purchase Order ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Invoice Number'
+		dataType: string
+		lineageTag: 4a329620-4c24-4f15-aa17-88940630d4fa
+		summarizeBy: none
+		sourceColumn: Supplier Invoice Number
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Total Excluding Tax'
+		dataType: double
+		lineageTag: eea4b3a9-04f4-4b08-b07d-0e4c848a21a7
+		summarizeBy: sum
+		sourceColumn: Total Excluding Tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Tax Amount'
+		dataType: double
+		lineageTag: c1429b58-cc3c-4693-8ab7-4e1442bf2d65
+		summarizeBy: sum
+		sourceColumn: Tax Amount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Total Including Tax'
+		dataType: double
+		lineageTag: c54204c7-10ba-485c-99b4-4a799b213c60
+		summarizeBy: sum
+		sourceColumn: Total Including Tax
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Outstanding Balance'
+		dataType: double
+		lineageTag: 308619f3-d8d7-405f-b028-66f35556b926
+		summarizeBy: sum
+		sourceColumn: Outstanding Balance
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Is Finalized'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 744c745f-4cb0-4b54-b514-2590e7de54ef
+		summarizeBy: none
+		sourceColumn: Is Finalized
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 677fb78d-6902-42f9-8988-df63d96c1d73
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Transaction' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "WideWorldImportersDW"),
+				    Fact_Transaction = Source{[Schema="Fact",Item="Transaction"]}[Data]
+				in
+				    Fact_Transaction
+

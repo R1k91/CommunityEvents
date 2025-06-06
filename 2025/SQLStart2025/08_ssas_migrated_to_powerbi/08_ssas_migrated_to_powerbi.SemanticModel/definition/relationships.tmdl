@@ -1,0 +1,4 @@
+relationship 7bde44f4-0eca-413d-a992-4e8aa8e7a63e
+	fromColumn: 'Fact Sale'.'City Key'
+	toColumn: 'Dimension City'.'City Key'
+

@@ -1,0 +1,42 @@
+﻿table 'Dimension Transaction Type'
+	ordinal: 8
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    #"Dimension_Transaction Type" = Source{[Schema="Dimension",Item="Transaction Type"]}[Data]
+			in
+			    #"Dimension_Transaction Type"
+
+	column 'Transaction Type Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Transaction Type Key
+
+	column 'WWI Transaction Type ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Transaction Type ID
+
+	column 'Transaction Type'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Transaction Type
+
+	column 'Valid From'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

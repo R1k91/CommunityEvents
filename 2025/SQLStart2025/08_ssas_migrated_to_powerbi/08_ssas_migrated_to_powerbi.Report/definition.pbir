@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../08_ssas_migrated_to_powerbi.SemanticModel"
+    }
+  }
+}

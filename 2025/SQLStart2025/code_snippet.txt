@@ -1,0 +1,69 @@
+-----------
+Demo 3
+-----------
+
+'Dimension 
+'Dim
+
+-----------
+Demo 5
+-----------
+Sum of Quantity = SUM('Fact Sale'[Quantity])
+
+
+-----------
+Demo 6
+-----------
+
+wideworldimportersdw
+wideworldimportersdw2
+
+-----------
+Demo 7
+-----------
+isAvailableinMDX: true
+
+createOrReplace
+	role NoCustomerTable
+		modelPermission: read
+	tablePermission 'Dim Customer'
+		metadataPermission: none
+
+-----------
+Demo 9
+-----------
+(column '\w+)\s
+$1 
+
+-----------
+Demo 10
+-----------
+based on the model createOrReplace represented in TMDL create a TMDL script to create all the relationships to connect fact tables and dim tables.
+relationship is made using same name columns
+this is an example:
+
+createOrReplace
+	relationship 995fe4f4-d173-10c5-c579-4951a3c36746
+        	isActive: true
+		fromColumn: 'Fact Order'.'Customer Key'
+		toColumn: 'Dim Customer'.'Customer Key'
+
+		annotation PBI_IsFromSource = FS
+
+	relationship 626449d6-e7df-d2ba-6841-f754343a2c05
+		isActive: true
+		fromColumn: 'Fact Sale'.'Customer Key'
+		toColumn: 'Dim Customer'.'Customer Key'
+
+		annotation PBI_IsFromSource = FS
+
+don't include comments
+the first argument of fromColumn represents a table, the first argument of the toColumn represents a table.
+if you have already created a relationship between two tables set second third and so on relationships to isActive: false
+
+-----------
+Demo 11
+-----------
+Source = Sql.Database("localhost", "WideWorldImportersDW"),
+Expression=
+
