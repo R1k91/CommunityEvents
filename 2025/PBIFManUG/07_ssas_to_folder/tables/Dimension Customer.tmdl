@@ -1,0 +1,67 @@
+﻿table 'Dimension Customer'
+	ordinal: 2
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Dimension_Customer = Source{[Schema="Dimension",Item="Customer"]}[Data]
+			in
+			    Dimension_Customer
+
+	column 'Customer Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Customer Key
+
+	column 'WWI Customer ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Customer ID
+
+	column Customer
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Customer
+
+	column 'Bill To Customer'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Bill To Customer
+
+	column Category
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Category
+
+	column 'Buying Group'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Buying Group
+
+	column 'Primary Contact'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Primary Contact
+
+	column 'Postal Code'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Postal Code
+
+	column 'Valid From'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

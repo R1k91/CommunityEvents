@@ -1,0 +1,107 @@
+﻿table 'Dimension Stock Item'
+	ordinal: 6
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    #"Dimension_Stock Item" = Source{[Schema="Dimension",Item="Stock Item"]}[Data]
+			in
+			    #"Dimension_Stock Item"
+
+	column 'Stock Item Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Stock Item Key
+
+	column 'WWI Stock Item ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Stock Item ID
+
+	column 'Stock Item'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Stock Item
+
+	column Color
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Color
+
+	column 'Selling Package'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Selling Package
+
+	column 'Buying Package'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Buying Package
+
+	column Brand
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Brand
+
+	column Size
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Size
+
+	column 'Lead Time Days'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lead Time Days
+
+	column 'Quantity Per Outer'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Quantity Per Outer
+
+	column 'Is Chiller Stock'
+		dataType: Boolean
+		isDataTypeInferred: false
+		sourceColumn: Is Chiller Stock
+
+	column Barcode
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Barcode
+
+	column 'Tax Rate'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Tax Rate
+
+	column 'Unit Price'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Unit Price
+
+	column 'Recommended Retail Price'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Recommended Retail Price
+
+	column 'Typical Weight Per Unit'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Typical Weight Per Unit
+
+	column 'Valid From'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

@@ -1,0 +1,11 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/fabric/gitIntegration/platformProperties/2.0.0/schema.json",
+  "metadata": {
+    "type": "SemanticModel",
+    "displayName": "02_Model_WO_Rel"
+  },
+  "config": {
+    "version": "2.0",
+    "logicalId": "5e0ee87c-b737-4751-8817-ec3521db50a2"
+  }
+}

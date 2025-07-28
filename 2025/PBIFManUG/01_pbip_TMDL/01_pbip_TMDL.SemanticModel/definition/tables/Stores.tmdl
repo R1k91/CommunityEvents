@@ -1,0 +1,99 @@
+table Stores
+	lineageTag: af32a1d5-99e3-4b32-aa67-26fec54c29fc
+
+	column StoreKey
+		dataType: double
+		isHidden
+		lineageTag: a1c636ef-ca76-4181-ba5a-a8aef0202724
+		summarizeBy: none
+		sourceColumn: StoreKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column GeographyKey
+		dataType: double
+		isHidden
+		lineageTag: 103e05db-8d94-4f32-92a9-b0b3f6b79440
+		summarizeBy: none
+		sourceColumn: GeographyKey
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column StoreType
+		dataType: string
+		lineageTag: 5f5a23de-61e3-4b90-b2a8-e3f481ae7743
+		summarizeBy: none
+		sourceColumn: StoreType
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column StoreName
+		dataType: string
+		lineageTag: 880bac7d-2cb1-4c3a-a44d-e2c9a791479c
+		summarizeBy: none
+		sourceColumn: StoreName
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Status
+		dataType: string
+		lineageTag: 5e8012ff-f745-43c4-aef1-d606643fffb7
+		summarizeBy: none
+		sourceColumn: Status
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column CloseReason
+		dataType: string
+		lineageTag: 853d2d36-f0a8-4eda-ad44-e261cabecfe8
+		summarizeBy: none
+		sourceColumn: CloseReason
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column EmployeeCount
+		dataType: double
+		lineageTag: 7e848515-412f-41c6-a527-cae050c18944
+		summarizeBy: sum
+		sourceColumn: EmployeeCount
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column SellingAreaSize
+		dataType: double
+		lineageTag: c19be1aa-2111-4e18-8b79-bcb402be2378
+		summarizeBy: sum
+		sourceColumn: SellingAreaSize
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	partition Stores-9adb2fe5-82cc-4247-9cbf-199daa1f6820 = m
+		mode: import
+		source =
+				let
+				    Source = Access.Database(File.Contents("C:\Users\owend\Documents\ContosoSalesV31_64bit.accdb")),
+				    _DimStores = Source{[Schema="",Item="DimStores"]}[Data],
+				    #"Removed Columns" = Table.RemoveColumns(_DimStores,{"StoreManager", "CloseDate", "OpenDate", "ZipCode", "ZipCodeExtension", "StorePhone", "StoreFax", "AddressLine1", "AddressLine2", "LastRemodelDate", "GeoLocation", "Geometry", "ETLLoadID", "LoadDate", "UpdateDate", "EntityKey", "StoreDescription"})
+				in
+				    #"Removed Columns"
+
+	annotation ColumnsMetadata = {"Columns":[{"Name":"StoreKey","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{StoreKey,0}"},{"Name":"GeographyKey","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{GeographyKey,1}"},{"Name":"StoreType","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{StoreType,3}"},{"Name":"StoreName","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{StoreName,4}"},{"Name":"Status","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{Status,6}"},{"Name":"CloseReason","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{CloseReason,16}"},{"Name":"EmployeeCount","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{EmployeeCount,17}"},{"Name":"SellingAreaSize","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimStores.{SellingAreaSize,18}"}]}
+
+	annotation PBI_ResultType = Table
+

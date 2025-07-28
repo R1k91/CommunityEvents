@@ -1,0 +1,8 @@
+{
+  "version": "4.0",
+  "datasetReference": {
+    "byPath": {
+      "path": "../06_Model_With_Rel_Dim_With_Measures_ROLS.SemanticModel"
+    }
+  }
+}

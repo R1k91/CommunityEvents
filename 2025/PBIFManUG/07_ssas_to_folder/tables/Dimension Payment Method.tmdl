@@ -1,0 +1,42 @@
+﻿table 'Dimension Payment Method'
+	ordinal: 5
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    #"Dimension_Payment Method" = Source{[Schema="Dimension",Item="Payment Method"]}[Data]
+			in
+			    #"Dimension_Payment Method"
+
+	column 'Payment Method Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Payment Method Key
+
+	column 'WWI Payment Method ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Payment Method ID
+
+	column 'Payment Method'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Payment Method
+
+	column 'Valid From'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

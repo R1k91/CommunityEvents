@@ -1,0 +1,82 @@
+﻿table 'Dimension City'
+	ordinal: 1
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Dimension_City = Source{[Schema="Dimension",Item="City"]}[Data]
+			in
+			    Dimension_City
+
+	column 'City Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: City Key
+
+	column 'WWI City ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI City ID
+
+	column City
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: City
+
+	column 'State Province'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: State Province
+
+	column Country
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Country
+
+	column Continent
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Continent
+
+	column 'Sales Territory'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Sales Territory
+
+	column Region
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Region
+
+	column Subregion
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Subregion
+
+	column Location
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Location
+
+	column 'Latest Recorded Population'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Latest Recorded Population
+
+	column 'Valid From'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

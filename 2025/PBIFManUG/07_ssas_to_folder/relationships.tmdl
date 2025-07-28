@@ -1,0 +1,121 @@
+﻿relationship 7bde44f4-0eca-413d-a992-4e8aa8e7a63e
+	fromColumn: 'Fact Sale'.'City Key'
+	toColumn: 'Dimension City'.'City Key'
+
+relationship 4c56fea4-a81a-458d-a2f7-1cd3199bc85b
+	fromColumn: 'Fact Order'.'Customer Key'
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+relationship 42fa67e3-7370-403c-a179-da625d96dfc1
+	fromColumn: 'Fact Sale'.'Bill To Customer Key'
+	isActive: false
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+relationship 1b13d804-b422-4514-9e98-292988875117
+	fromColumn: 'Fact Sale'.'Customer Key'
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+relationship 3844b4c5-4aaa-47d4-a417-e9a65a364db8
+	fromColumn: 'Fact Transaction'.'Bill To Customer Key'
+	isActive: false
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+relationship 04999e86-00d0-46da-a475-a252f6304381
+	fromColumn: 'Fact Transaction'.'Customer Key'
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+relationship 4beefc8b-c4d3-4bec-9131-dede3aa8695e
+	fromColumn: 'Fact Movement'.'Date Key'
+	toColumn: 'Dimension Date'.Date
+
+relationship db7fb408-4632-4cb8-a554-f414609c1450
+	fromColumn: 'Fact Order'.'Order Date Key'
+	toColumn: 'Dimension Date'.Date
+
+relationship 0594a9fc-bd19-4037-8057-a00f60b92c59
+	fromColumn: 'Fact Order'.'Picked Date Key'
+	isActive: false
+	toColumn: 'Dimension Date'.Date
+
+relationship 3a213930-afa7-45ea-ae71-a74d9f62ad18
+	fromColumn: 'Fact Purchase'.'Date Key'
+	toColumn: 'Dimension Date'.Date
+
+relationship 93b3e39d-9694-403a-b804-c64f523b752e
+	fromColumn: 'Fact Sale'.'Delivery Date Key'
+	isActive: false
+	toColumn: 'Dimension Date'.Date
+
+relationship 20d72219-0177-446a-89b5-12f3407bfcc0
+	fromColumn: 'Fact Sale'.'Invoice Date Key'
+	toColumn: 'Dimension Date'.Date
+
+relationship 719f311f-a33a-4671-b70f-24f1d8840bc4
+	fromColumn: 'Fact Transaction'.'Date Key'
+	toColumn: 'Dimension Date'.Date
+
+relationship 1034890b-21dd-4891-9b01-91863b4d3163
+	fromColumn: 'Fact Order'.'Picker Key'
+	isActive: false
+	toColumn: 'Dimension Employee'.'Employee Key'
+
+relationship 892bfe20-df3e-4f81-8d58-fdbfec239a02
+	fromColumn: 'Fact Order'.'Salesperson Key'
+	toColumn: 'Dimension Employee'.'Employee Key'
+
+relationship 735b4687-3dc9-48c9-8254-c2636c43691d
+	fromColumn: 'Fact Movement'.'Stock Item Key'
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+relationship 36a74af7-3457-4c3b-ae83-a129efdf43c9
+	fromColumn: 'Fact Order'.'Stock Item Key'
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+relationship f135d247-005f-4e45-8b00-3c05d9af7b1c
+	fromColumn: 'Fact Purchase'.'Stock Item Key'
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+relationship 3e95efc5-fb07-4e49-99ce-9b176f580148
+	fromColumn: 'Fact Sale'.'Stock Item Key'
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+relationship 5b595d8b-b5eb-4ac2-8dc9-b6d04095fc26
+	fromColumn: 'Fact Movement'.'Supplier Key'
+	toColumn: 'Dimension Supplier'.'Supplier Key'
+
+relationship 7db2c92a-e5b9-4025-a8f6-d1601617c49a
+	fromColumn: 'Fact Purchase'.'Supplier Key'
+	toColumn: 'Dimension Supplier'.'Supplier Key'
+
+relationship ec2e8290-a48f-419e-b62c-4217cf249d73
+	fromColumn: 'Fact Movement'.'Transaction Type Key'
+	toColumn: 'Dimension Transaction Type'.'Transaction Type Key'
+
+relationship a0fd2520-4d65-408a-bb97-b9ba91fd488b
+	fromColumn: 'Fact Transaction'.'Transaction Type Key'
+	toColumn: 'Dimension Transaction Type'.'Transaction Type Key'
+
+relationship 72da6c46-2a03-403d-b6b9-d8c3e841195d
+	fromColumn: 'Fact Order'.'City Key'
+	toColumn: 'Dimension City'.'City Key'
+
+relationship aa3b3429-b600-4d67-8aba-913110b62087
+	fromColumn: 'Fact Movement'.'Customer Key'
+	toColumn: 'Dimension Customer'.'Customer Key'
+
+relationship ae356cd4-f987-4433-8f3f-6316ee60a0c9
+	fromColumn: 'Fact Sale'.'Salesperson Key'
+	toColumn: 'Dimension Employee'.'Employee Key'
+
+relationship eb72ee39-ea8d-4dad-8c4d-d96f8b633444
+	fromColumn: 'Fact Transaction'.'Payment Method Key'
+	toColumn: 'Dimension Payment Method'.'Payment Method Key'
+
+relationship 2580116c-598f-4d68-8cf4-f590be97f70a
+	fromColumn: 'Fact Stock Holding'.'Stock Item Key'
+	toColumn: 'Dimension Stock Item'.'Stock Item Key'
+
+relationship e3827fb6-957c-425a-872c-dab0d6ad8b62
+	fromColumn: 'Fact Transaction'.'Supplier Key'
+	toColumn: 'Dimension Supplier'.'Supplier Key'
+

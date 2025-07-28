@@ -1,0 +1,121 @@
+﻿table 'Fact Sale'
+	ordinal: 12
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Fact_Sale = Source{[Schema="Fact",Item="Sale"]}[Data]
+			in
+			    Fact_Sale
+
+	measure 'Sum of Quantity' = SUM('Fact Sale'[Quantity])
+
+	measure 'Sum of Profit' = SUM('Fact Sale'[Profit])
+
+	column 'Sale Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Sale Key
+
+	column 'City Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: City Key
+
+	column 'Customer Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Customer Key
+
+	column 'Bill To Customer Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Bill To Customer Key
+
+	column 'Stock Item Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Stock Item Key
+
+	column 'Invoice Date Key'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Invoice Date Key
+
+	column 'Delivery Date Key'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Delivery Date Key
+
+	column 'Salesperson Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Salesperson Key
+
+	column 'WWI Invoice ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Invoice ID
+
+	column Description
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Description
+
+	column Package
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Package
+
+	column Quantity
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Quantity
+
+	column 'Unit Price'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Unit Price
+
+	column 'Tax Rate'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Tax Rate
+
+	column 'Total Excluding Tax'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Total Excluding Tax
+
+	column 'Tax Amount'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Tax Amount
+
+	column Profit
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Profit
+
+	column 'Total Including Tax'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Total Including Tax
+
+	column 'Total Dry Items'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Total Dry Items
+
+	column 'Total Chiller Items'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Total Chiller Items
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

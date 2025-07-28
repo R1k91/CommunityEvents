@@ -1,0 +1,67 @@
+﻿table 'Dimension Supplier'
+	ordinal: 7
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Dimension_Supplier = Source{[Schema="Dimension",Item="Supplier"]}[Data]
+			in
+			    Dimension_Supplier
+
+	column 'Supplier Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Supplier Key
+
+	column 'WWI Supplier ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Supplier ID
+
+	column Supplier
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Supplier
+
+	column Category
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Category
+
+	column 'Primary Contact'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Primary Contact
+
+	column 'Supplier Reference'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Supplier Reference
+
+	column 'Payment Days'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Payment Days
+
+	column 'Postal Code'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Postal Code
+
+	column 'Valid From'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid From
+
+	column 'Valid To'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Valid To
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

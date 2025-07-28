@@ -1,0 +1,67 @@
+﻿table 'Fact Movement'
+	ordinal: 9
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Fact_Movement = Source{[Schema="Fact",Item="Movement"]}[Data]
+			in
+			    Fact_Movement
+
+	column 'Movement Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Movement Key
+
+	column 'Date Key'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Date Key
+
+	column 'Stock Item Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Stock Item Key
+
+	column 'Customer Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Customer Key
+
+	column 'Supplier Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Supplier Key
+
+	column 'Transaction Type Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Transaction Type Key
+
+	column 'WWI Stock Item Transaction ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Stock Item Transaction ID
+
+	column 'WWI Invoice ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Invoice ID
+
+	column 'WWI Purchase Order ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Purchase Order ID
+
+	column Quantity
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Quantity
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

@@ -1,0 +1,7 @@
+createOrReplace
+	role NoCustomerTable
+	
+		modelPermission: read
+
+		tablePermission 'Dim Customer'
+			metadataPermission: none

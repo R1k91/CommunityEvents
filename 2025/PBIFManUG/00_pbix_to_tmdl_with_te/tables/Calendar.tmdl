@@ -1,0 +1,110 @@
+﻿table Calendar
+	lineageTag: cd0b5eba-4e3b-40d6-acbb-7beb974cbecd
+	ordinal: 9
+
+	partition Calendar-c5851a98-1654-4378-9576-8acf34cce5e3 = M
+		mode: Import
+		expression:=
+			let
+			    Source = Access.Database(File.Contents("C:\Users\owend\Documents\ContosoSalesV31_64bit.accdb")),
+			    _DimDate = Source{[Schema="",Item="DimDate"]}[Data],
+			    #"Changed Type" = Table.TransformColumnTypes(_DimDate,{{"YearKey", Int64.Type}, {"QuarterOfYear", Int64.Type}, {"MonthOfYear", Int64.Type}, {"DayOfMonth", Int64.Type}}),
+			    #"Removed Columns" = Table.RemoveColumns(#"Changed Type",{"MonthInCalendar", "QuarterInCalendar", "DayInWeek"}),
+			    #"Renamed Columns" = Table.RenameColumns(#"Removed Columns",{{"YearKey", "Year"}})
+			in
+			    #"Renamed Columns"
+
+	column DateKey
+		dataType: DateTime
+		formatString:= General Date
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: a25fbd55-0fe9-4d20-8d4a-7c8f4a2f7a01
+		sourceColumn: DateKey
+		summarizeBy: None
+
+		variation Variation
+			defaultHierarchy: LocalDateTable_e0f960dd-6fb3-4ef4-80d6-a5860437a22b.'Date Hierarchy'
+			isDefault
+			relationship: 2c965485-ff28-4ff5-9be6-651272a0337a
+
+		annotation SummarizationSetBy = Automatic
+
+	column DateInt
+		dataType: Double
+		isDataTypeInferred: false
+		isHidden
+		lineageTag: ab9bbd16-8f0c-47ca-9619-db3ae84014ce
+		sourceColumn: DateInt
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column MonthName
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: bfbee1e0-d4be-4dab-a17c-a65c4f52f6e6
+		sourceColumn: MonthName
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column DayOfWeekName
+		dataType: String
+		isDataTypeInferred: false
+		lineageTag: 8b16c94d-1fc5-4fd1-9523-ccf41401a398
+		sourceColumn: DayOfWeekName
+		summarizeBy: None
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isText":true}
+
+	column Year
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: a162c6c9-0f9b-4098-b959-ccc1785e74f9
+		sourceColumn: Year
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column QuarterOfYear
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 7632893a-7b19-4fe3-838e-8ded073c1048
+		sourceColumn: QuarterOfYear
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column MonthOfYear
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: d987f415-22a5-4ad7-bcb6-27c638e1dedf
+		sourceColumn: MonthOfYear
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	column DayOfMonth
+		dataType: Int64
+		formatString:= 0
+		isDataTypeInferred: false
+		lineageTag: 330f871e-7dc3-4629-9ca3-7d827782204c
+		sourceColumn: DayOfMonth
+		summarizeBy: Sum
+
+		annotation SummarizationSetBy = Automatic
+
+	annotation ColumnsMetadata = {"Columns":[{"Name":"DateKey","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimDate.{DateKey,0}"},{"Name":"DateInt","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimDate.{DateInt,1}"},{"Name":"Year","Id":"Section1/DimDate/Changed Type.{YearKey,2}"},{"Name":"QuarterOfYear","Id":"Section1/DimDate/Changed Type.{QuarterOfYear,3}"},{"Name":"MonthOfYear","Id":"Section1/DimDate/Changed Type.{MonthOfYear,4}"},{"Name":"DayOfMonth","Id":"Section1/DimDate/Changed Type.{DayOfMonth,5}"},{"Name":"MonthName","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimDate.{MonthName,6}"},{"Name":"DayOfWeekName","Id":"Server.Database\\/1/File/c:\\\\users\\\\owend\\\\documents\\\\contososalesv31_64bit.accdb//DimDate.{DayOfWeekName,9}"}]}
+
+	annotation PBI_ResultType = Table
+

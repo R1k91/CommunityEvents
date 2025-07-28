@@ -1,0 +1,102 @@
+﻿table 'Fact Transaction'
+	ordinal: 14
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Fact_Transaction = Source{[Schema="Fact",Item="Transaction"]}[Data]
+			in
+			    Fact_Transaction
+
+	column 'Transaction Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Transaction Key
+
+	column 'Date Key'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Date Key
+
+	column 'Customer Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Customer Key
+
+	column 'Bill To Customer Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Bill To Customer Key
+
+	column 'Supplier Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Supplier Key
+
+	column 'Transaction Type Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Transaction Type Key
+
+	column 'Payment Method Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Payment Method Key
+
+	column 'WWI Customer Transaction ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Customer Transaction ID
+
+	column 'WWI Supplier Transaction ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Supplier Transaction ID
+
+	column 'WWI Invoice ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Invoice ID
+
+	column 'WWI Purchase Order ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Purchase Order ID
+
+	column 'Supplier Invoice Number'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Supplier Invoice Number
+
+	column 'Total Excluding Tax'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Total Excluding Tax
+
+	column 'Tax Amount'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Tax Amount
+
+	column 'Total Including Tax'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Total Including Tax
+
+	column 'Outstanding Balance'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Outstanding Balance
+
+	column 'Is Finalized'
+		dataType: Boolean
+		isDataTypeInferred: false
+		sourceColumn: Is Finalized
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

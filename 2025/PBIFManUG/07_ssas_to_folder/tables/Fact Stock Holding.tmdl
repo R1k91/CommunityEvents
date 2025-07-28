@@ -1,0 +1,57 @@
+﻿table 'Fact Stock Holding'
+	ordinal: 13
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    #"Fact_Stock Holding" = Source{[Schema="Fact",Item="Stock Holding"]}[Data]
+			in
+			    #"Fact_Stock Holding"
+
+	column 'Stock Holding Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Stock Holding Key
+
+	column 'Stock Item Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Stock Item Key
+
+	column 'Quantity On Hand'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Quantity On Hand
+
+	column 'Bin Location'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Bin Location
+
+	column 'Last Stocktake Quantity'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Last Stocktake Quantity
+
+	column 'Last Cost Price'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Last Cost Price
+
+	column 'Reorder Level'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Reorder Level
+
+	column 'Target Stock Level'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Target Stock Level
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

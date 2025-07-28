@@ -1,0 +1,82 @@
+﻿table 'Dimension Date'
+	ordinal: 3
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Dimension_Date = Source{[Schema="Dimension",Item="Date"]}[Data]
+			in
+			    Dimension_Date
+
+	column Date
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Date
+
+	column 'Day Number'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Day Number
+
+	column Day
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Day
+
+	column Month
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Month
+
+	column 'Short Month'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Short Month
+
+	column 'Calendar Month Number'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Calendar Month Number
+
+	column 'Calendar Month Label'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Calendar Month Label
+
+	column 'Calendar Year'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Calendar Year
+
+	column 'Calendar Year Label'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Calendar Year Label
+
+	column 'Fiscal Month Number'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Fiscal Month Number
+
+	column 'Fiscal Month Label'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Fiscal Month Label
+
+	column 'Fiscal Year'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Fiscal Year
+
+	column 'Fiscal Year Label'
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Fiscal Year Label
+
+	column 'ISO Week Number'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: ISO Week Number
+

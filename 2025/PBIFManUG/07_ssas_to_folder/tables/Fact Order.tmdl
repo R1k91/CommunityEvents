@@ -1,0 +1,107 @@
+﻿table 'Fact Order'
+	ordinal: 10
+
+	partition Partition = M
+		dataView: Full
+		expression:=
+			let
+			    Source = #"SQL/localhost;WideWorldImportersDW",
+			    Fact_Order = Source{[Schema="Fact",Item="Order"]}[Data]
+			in
+			    Fact_Order
+
+	column 'Order Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Order Key
+
+	column 'City Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: City Key
+
+	column 'Customer Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Customer Key
+
+	column 'Stock Item Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Stock Item Key
+
+	column 'Order Date Key'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Order Date Key
+
+	column 'Picked Date Key'
+		dataType: DateTime
+		isDataTypeInferred: false
+		sourceColumn: Picked Date Key
+
+	column 'Salesperson Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Salesperson Key
+
+	column 'Picker Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Picker Key
+
+	column 'WWI Order ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Order ID
+
+	column 'WWI Backorder ID'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: WWI Backorder ID
+
+	column Description
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Description
+
+	column Package
+		dataType: String
+		isDataTypeInferred: false
+		sourceColumn: Package
+
+	column Quantity
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Quantity
+
+	column 'Unit Price'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Unit Price
+
+	column 'Tax Rate'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Tax Rate
+
+	column 'Total Excluding Tax'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Total Excluding Tax
+
+	column 'Tax Amount'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Tax Amount
+
+	column 'Total Including Tax'
+		dataType: Double
+		isDataTypeInferred: false
+		sourceColumn: Total Including Tax
+
+	column 'Lineage Key'
+		dataType: Int64
+		isDataTypeInferred: false
+		sourceColumn: Lineage Key
+

@@ -1,0 +1,108 @@
+table 'Dimension Supplier'
+	lineageTag: 60d4aed7-1406-45b8-9733-3d210758caf1
+
+	column 'Supplier Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 608e39fa-e36e-42b0-8dc5-40f48fdbc879
+		summarizeBy: count
+		sourceColumn: Supplier Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Supplier ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: ffaa02f7-e597-433f-952a-f7b307936536
+		summarizeBy: count
+		sourceColumn: WWI Supplier ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Supplier
+		dataType: string
+		lineageTag: b3c51910-59d6-4b5c-854e-6057c9580e1e
+		summarizeBy: none
+		sourceColumn: Supplier
+
+		annotation SummarizationSetBy = Automatic
+
+	column Category
+		dataType: string
+		lineageTag: 1cd4ffae-c6e7-4884-a13a-b45f238f785a
+		summarizeBy: none
+		sourceColumn: Category
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Primary Contact'
+		dataType: string
+		lineageTag: ea55cb12-b140-48f1-a94b-75b8e3c0e95d
+		summarizeBy: none
+		sourceColumn: Primary Contact
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Supplier Reference'
+		dataType: string
+		lineageTag: 43599ad9-46d3-4e46-bb7b-c826f025e957
+		summarizeBy: none
+		sourceColumn: Supplier Reference
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Payment Days'
+		dataType: int64
+		formatString: 0
+		lineageTag: 87af3e36-374c-4e38-bf81-9bc9dbcce851
+		summarizeBy: sum
+		sourceColumn: Payment Days
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Postal Code'
+		dataType: string
+		lineageTag: 5b98bc69-5d94-4e53-9758-5a4f6128bb80
+		summarizeBy: none
+		sourceColumn: Postal Code
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 74895766-3466-4f65-8cd3-a93bcd24c445
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 035359f5-ee26-402b-915b-5629981c86c0
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 7a988ace-0b48-4ffe-8fc1-4fea072a6cac
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dimension Supplier' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "WideWorldImportersDW"),
+				    Dimension_Supplier = Source{[Schema="Dimension",Item="Supplier"]}[Data]
+				in
+				    Dimension_Supplier
+
+	annotation PBI_ResultType = Table
+

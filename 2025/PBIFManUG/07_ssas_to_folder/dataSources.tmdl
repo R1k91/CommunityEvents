@@ -1,0 +1,10 @@
+﻿dataSource SQL/localhost;WideWorldImportersDW
+	connectionDetails:
+		address:
+			database: WideWorldImportersDW
+			server: localhost
+		protocol: tds
+	credential:
+		authenticationKind: UsernamePassword
+		username: ssas
+

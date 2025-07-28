@@ -1,0 +1,84 @@
+table 'Dim Employee'
+	lineageTag: c9296c9b-fc85-4eca-b3cf-a8526b5a4a41
+
+	column 'Employee Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0b8a4dc3-6769-4295-a5e4-a1850830f0ab
+		summarizeBy: count
+		sourceColumn: Employee Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'WWI Employee ID'
+		dataType: int64
+		formatString: 0
+		lineageTag: a2d33199-0e71-4a51-b4b2-f3399b64d0b0
+		summarizeBy: count
+		sourceColumn: WWI Employee ID
+
+		annotation SummarizationSetBy = Automatic
+
+	column Employee
+		dataType: string
+		lineageTag: 06728413-41e0-4490-96ea-1be64633c022
+		summarizeBy: none
+		sourceColumn: Employee
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Preferred Name'
+		dataType: string
+		lineageTag: d3596aa0-07bf-45dc-933b-750c7e5e5bbf
+		summarizeBy: none
+		sourceColumn: Preferred Name
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Is Salesperson'
+		dataType: boolean
+		formatString: """TRUE"";""TRUE"";""FALSE"""
+		lineageTag: 95788cb0-d0af-4a8a-8ea1-1198d2e71f5c
+		summarizeBy: none
+		sourceColumn: Is Salesperson
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid From'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 032d2b8f-d565-4fb2-bcc7-4f2496fea3f6
+		summarizeBy: none
+		sourceColumn: Valid From
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Valid To'
+		dataType: dateTime
+		formatString: General Date
+		lineageTag: 7fd87b52-904d-4072-b2b6-ba4fe942a998
+		summarizeBy: none
+		sourceColumn: Valid To
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 0edcd89b-e71e-44c6-821d-72cab8171a3d
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Dim Employee' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "WideWorldImportersDW"),
+				    Dimension_Employee = Source{[Schema="Dimension",Item="Employee"]}[Data]
+				in
+				    Dimension_Employee
+
+	annotation PBI_ResultType = Table
+

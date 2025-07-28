@@ -1,0 +1,136 @@
+table 'Fact Sale'
+	lineageTag: cda4018c-a598-42f9-96d4-087e6031b8e8
+
+	measure 'Sum of Quantity' = SUM('Fact Sale'[Quantity])
+		lineageTag: 59c8b5da-8996-490d-8d48-bdba4e6b6369
+
+	measure 'Sum of Profit' = SUM('Fact Sale'[Profit])
+		lineageTag: db8072aa-01eb-43bc-891e-1a967c98bf13
+
+	column 'Sale Key'
+		dataType: int64
+		lineageTag: 20dcc961-4c03-4576-a916-06de49f808ea
+		sourceColumn: Sale Key
+
+	column 'City Key'
+		dataType: int64
+		lineageTag: 46050531-1033-499c-8722-a80f224b54a5
+		sourceColumn: City Key
+
+	column 'Customer Key'
+		dataType: int64
+		lineageTag: 33a0c954-b13a-422d-b9df-ca79911ea4bb
+		sourceColumn: Customer Key
+
+	column 'Bill To Customer Key'
+		dataType: int64
+		lineageTag: 33e2c959-f07c-4cb0-aaf7-22bcfac88ea2
+		sourceColumn: Bill To Customer Key
+
+	column 'Stock Item Key'
+		dataType: int64
+		lineageTag: f463a7a8-66f2-4490-9b63-aa49eea4f3c0
+		sourceColumn: Stock Item Key
+
+	column 'Invoice Date Key'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: 489d47ec-e6b2-4dc8-a0a8-10557e885a7a
+		summarizeBy: none
+		sourceColumn: Invoice Date Key
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Delivery Date Key'
+		dataType: dateTime
+		formatString: Long Date
+		lineageTag: c57010dd-43fc-4097-82a7-1125b88a38d8
+		summarizeBy: none
+		sourceColumn: Delivery Date Key
+
+		annotation UnderlyingDateTimeDataType = Date
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Salesperson Key'
+		dataType: int64
+		lineageTag: 86c8fa78-f6fc-46a6-83bc-5994cc1f45c2
+		sourceColumn: Salesperson Key
+
+	column 'WWI Invoice ID'
+		dataType: int64
+		lineageTag: ed2cb07e-bf8f-449c-9bae-2513d1c2b5d1
+		sourceColumn: WWI Invoice ID
+
+	column Description
+		dataType: string
+		lineageTag: 49927795-52bd-453c-bb56-ce6115f16a43
+		sourceColumn: Description
+
+	column Package
+		dataType: string
+		lineageTag: 80db29b5-b646-464d-9ea0-e8bf129260e3
+		sourceColumn: Package
+
+	column Quantity
+		dataType: int64
+		lineageTag: 3989c28a-5171-4cbb-b3ce-5ce58e8b3fb3
+		sourceColumn: Quantity
+
+	column 'Unit Price'
+		dataType: double
+		lineageTag: b302699d-f052-4e82-9ffd-3f75d9b815b1
+		sourceColumn: Unit Price
+
+	column 'Tax Rate'
+		dataType: double
+		lineageTag: 901b9346-470b-4328-aff0-91865f9a58e8
+		sourceColumn: Tax Rate
+
+	column 'Total Excluding Tax'
+		dataType: double
+		lineageTag: b74876e0-9644-4c18-ba3a-556c8014ff25
+		sourceColumn: Total Excluding Tax
+
+	column 'Tax Amount'
+		dataType: double
+		lineageTag: 24cc7984-a271-4782-8444-39a5cfa62b8f
+		sourceColumn: Tax Amount
+
+	column Profit
+		dataType: double
+		lineageTag: 4136b4ee-988b-42c4-8046-8481fbe26a56
+		sourceColumn: Profit
+
+	column 'Total Including Tax'
+		dataType: double
+		lineageTag: ad66c968-7227-4e33-af7a-0d3c5e2084c4
+		sourceColumn: Total Including Tax
+
+	column 'Total Dry Items'
+		dataType: int64
+		lineageTag: 17e58eb7-2206-4a8a-a8e5-46bbb288ed76
+		sourceColumn: Total Dry Items
+
+	column 'Total Chiller Items'
+		dataType: int64
+		lineageTag: ef5c8296-bd35-48d1-9d1f-9e4b1b72649f
+		sourceColumn: Total Chiller Items
+
+	column 'Lineage Key'
+		dataType: int64
+		lineageTag: 7ff29cb0-d7e1-4933-988b-b20a70912b61
+		sourceColumn: Lineage Key
+
+	partition Partition = m
+		mode: import
+		dataView: full
+		source =
+				let
+					Source = Sql.Database("localhost", "WideWorldImportersDW"),
+					Fact_Sale = Source{[Schema="Fact",Item="Sale"]}[Data]
+				in
+					Fact_Sale
+

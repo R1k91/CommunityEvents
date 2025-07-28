@@ -1,0 +1,93 @@
+table 'Fact Stock Holding'
+	lineageTag: f6c359c1-53d8-4081-9df7-acae83aa2b89
+
+	column 'Stock Holding Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 003f6afb-2149-41aa-869a-3e5f5f3ba013
+		summarizeBy: count
+		sourceColumn: Stock Holding Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Stock Item Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: 10258e7e-c979-4eca-9d9c-00f0afdf5419
+		summarizeBy: count
+		sourceColumn: Stock Item Key
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Quantity On Hand'
+		dataType: int64
+		formatString: 0
+		lineageTag: c7d533d0-70cb-4e24-90d0-f10f3a544e52
+		summarizeBy: sum
+		sourceColumn: Quantity On Hand
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Bin Location'
+		dataType: string
+		lineageTag: 72f76ec7-d68c-48c3-acb4-ee96b7a708f6
+		summarizeBy: none
+		sourceColumn: Bin Location
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Stocktake Quantity'
+		dataType: int64
+		formatString: 0
+		lineageTag: c65ce4b6-9005-4ba2-8767-92a6fc359d63
+		summarizeBy: sum
+		sourceColumn: Last Stocktake Quantity
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Last Cost Price'
+		dataType: double
+		lineageTag: 0373b8c9-3c13-4d8f-8334-ce8ff0bbd15f
+		summarizeBy: sum
+		sourceColumn: Last Cost Price
+
+		annotation SummarizationSetBy = Automatic
+
+		annotation PBI_FormatHint = {"isGeneralNumber":true}
+
+	column 'Reorder Level'
+		dataType: int64
+		formatString: 0
+		lineageTag: 980d2acb-6234-4921-9724-9373c2a5ff7c
+		summarizeBy: sum
+		sourceColumn: Reorder Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Target Stock Level'
+		dataType: int64
+		formatString: 0
+		lineageTag: 1ef2b7f3-7e70-49c7-8a2f-d75ce8b0d566
+		summarizeBy: sum
+		sourceColumn: Target Stock Level
+
+		annotation SummarizationSetBy = Automatic
+
+	column 'Lineage Key'
+		dataType: int64
+		formatString: 0
+		lineageTag: ab0f228d-bb22-4d04-a7d6-70b61fdacb09
+		summarizeBy: count
+		sourceColumn: Lineage Key
+
+		annotation SummarizationSetBy = Automatic
+
+	partition 'Fact Stock Holding' = m
+		mode: import
+		source =
+				let
+				    Source = Sql.Database("localhost", "WideWorldImportersDW"),
+				    #"Fact_Stock Holding" = Source{[Schema="Fact",Item="Stock Holding"]}[Data]
+				in
+				    #"Fact_Stock Holding"
+
