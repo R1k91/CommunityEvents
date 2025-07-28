@@ -7,6 +7,7 @@
 - Global Azure 2025 Pordenone - Demystifying Power BI enhanced report format
 - Global Azure 2025 Milano - Transitioning from Azure Data Factory to Data Factory in Fabric
 - SQL Start 2025 Ancona - TMDL, the new model representation for semantic models
+- PBI & Fabric Manchester UG - TMDL, the new model representation for semantic models
 ## 2024
 - Data Saturday #48 Pordenone - Power BI CICD, Where are we? Where are we going?
 - SQL Start 2024 - Fabric: I Love You, I Love You Not
