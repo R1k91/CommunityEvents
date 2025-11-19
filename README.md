@@ -9,6 +9,7 @@
 - SQL Start 2025 Ancona - TMDL, the new model representation for semantic models
 - PBI & Fabric Manchester UG - TMDL, the new model representation for semantic models
 - WPC 2025 - Tecniche di CI/CD in Microsoft Fabric
+- Data Saturday #77 Parma - SQL Server developers' Toolbox
 ## 2024
 - Data Saturday #48 Pordenone - Power BI CICD, Where are we? Where are we going?
 - SQL Start 2024 - Fabric: I Love You, I Love You Not
