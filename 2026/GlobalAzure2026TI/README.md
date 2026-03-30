@@ -26,7 +26,7 @@
 
    ```
    Which tables are connected to fact.order?
-   How can I check the statistics of the fact.sale table?
+   Can you check statistics of fact.sale?
    Which cities are from Arizona?
    List the row count for all tables in the database.
    ```
@@ -50,10 +50,11 @@
    Return everything in a single script.
    ```
 
-## Demo 3 — MCP + Microsoft Docs in SSMS
+## Demo 3 — MCP + Microsoft Docs in Visual Studio Code
 
-1. Clear the Copilot Chat in SSMS
-2. Run the following prompt:
+1. Open **VS Code** and launch **GitHub Copilot Chat**
+2. Select model: `GPT-5 mini`
+3. Run the following prompt:
 
    ```
    You have access to MCP tools called microsoft_docs_search and microsoft_docs_fetch.
@@ -76,7 +77,7 @@
    dab start
    ```
 
-3. Open **VS Code** and launch **GitHub Copilot Chat**
+3. Clear **GitHub Copilot Chat**
 4. Select model: `Claude Sonnet 4.6`
 5. **Disable** the MSSQL MCP Server
 6. Run the following prompts to demonstrate DAB security boundaries:
