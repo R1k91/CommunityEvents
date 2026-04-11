@@ -2,6 +2,7 @@
 ## 2026
 - Data Saturday #80 Pordenone - Strategie di DevOps in Microsoft Fabric
 - Global Azure 2026 Ticino - SQL Server developers' Toolbox in the era of AI
+- Global Azure 2026 Pordenone - Data, Models, and Magic: Getting Started with Power BI
 ## 2025
 - Power BI User Group Italy - Deep Dive into Database Projects for Fabric Warehouse
 - Data Saturday #66 Pordenone - Power BI CICD 2025 Edition
