@@ -4,9 +4,11 @@
 
 1. Clone the `Events-SQLToolboxDevAI` repository
 2. Set SSMS theme to **Dark** and enable **tabs on the right**
-3. Restore the **AdventureWorks2017** database
-4. Restore the **WideWorldImportersDW** database
-5. Launch **ZoomIt** inside the VM
+3. Switch on SQL Server Engine
+4. Refresh GitHub Copilot Credentials in SSMS interface
+5. Restore the **AdventureWorks2017** database
+6. Restore the **WideWorldImportersDW** database
+7. Launch **ZoomIt** inside the VM
 
 ## Demo 1 — SSMS Features
 
@@ -15,7 +17,10 @@
 - Switch the theme to **Light**
 - Demonstrate the **Zoom** feature
 - Show **vertical tabs**, pinning, and renaming
-- Create a **database solution**, add a table (demonstrating code completion), and compile
+- Create a **database solution**, add a file called table1.sql
+- Start typing create table dbo.Table1 and show completation
+- Delete table name and call it dbo.customer and show how completation change
+- Change the name in dbo.customerwithaddresses and show how completation change
 
 ## Demo 2 — GitHub Copilot in SSMS
 
