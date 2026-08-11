@@ -4,6 +4,7 @@
 - Global Azure 2026 Ticino - SQL Server developers' Toolbox in the era of AI
 - Global Azure 2026 Pordenone - Data, Models, and Magic: Getting Started with Power BI
 - Torino Data Meetup #1 - 2026 FabCon & SQLCon best of
+- 1nn0vAI 2026 - Build Your Virtual Microsoft Fabric co-Developers
 ## 2025
 - Power BI User Group Italy - Deep Dive into Database Projects for Fabric Warehouse
 - Data Saturday #66 Pordenone - Power BI CICD 2025 Edition
