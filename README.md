@@ -4,7 +4,7 @@
 - Global Azure 2026 Ticino - SQL Server developers' Toolbox in the era of AI
 - Global Azure 2026 Pordenone - Data, Models, and Magic: Getting Started with Power BI
 - Torino Data Meetup #1 - 2026 FabCon & SQLCon best of
-- SQL Start 2026 - Multi-Cloud data platform integration with OneLake Shortcut and Caching
+- SQL Start 2026 - Multi-Cloud data platform integration with OneLake Shortcut and Caching
 - 1nn0vAI 2026 Pordenone - Build Your Virtual Microsoft Fabric co-Developers
 ## 2025
 - Power BI User Group Italy - Deep Dive into Database Projects for Fabric Warehouse
