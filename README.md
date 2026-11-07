@@ -7,6 +7,7 @@
 - SQL Start 2026 - Multi-Cloud data platform integration with OneLake Shortcut and Caching
 - 1nn0vAI 2026 Pordenone - Build Your Virtual Microsoft Fabric co-Developers
 - Ticino Data Conference 2026 - Multi-Cloud data platform integration with OneLake Shortcut and Caching
+- Data And AI Builders Confernce 2026 - Multi-Cloud data platform integration with OneLake Shortcut and Caching
 ## 2025
 - Power BI User Group Italy - Deep Dive into Database Projects for Fabric Warehouse
 - Data Saturday #66 Pordenone - Power BI CICD 2025 Edition
